@@ -17,14 +17,13 @@ else
 		do
 			#Compter le nombre de mot contenant la lettre visée
 			charStat=`grep -ic "$char" $1`
-			#Stocker le résultat dans un fichier temporaire 
         		echo "$charStat - $char"
 		done | sort -nr
 	#Si un deuxième argument est spécifié, alors rechercher les anagrammes de ce mot.
 	else
-		#Compter le nombre de caractère
+		#Compter le nombre de caractères composant le paramètre 2
 		charCount=`echo ${#2}`
-		#Calculer des variables utiles pour les 
+		#Calcule  les limites de taille pour les anagrammes recherchés
 		let "charMin = $charCount+1"
 		let "charMax = $charMin+1"
 		#Formater le paramètre 2 afin de le comparer plus facilement (Suppression des caratères spéciaux, Mise en minuscule, Tri des lettres)
