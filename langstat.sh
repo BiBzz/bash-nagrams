@@ -18,12 +18,8 @@ else
 			#Compter le nombre de mot contenant la lettre visée
 			charStat=`grep -ic "$char" $1`
 			#Stocker le résultat dans un fichier temporaire 
-        		echo "$charStat - $char" >> $0.temp
-		done
-		#Trier les lettres par nombre d'occurences
-		sort -nr $0.temp
-		#Effacer le fichier temporaire
-		rm $0.temp
+        		echo "$charStat - $char"
+		done | sort -nr
 	#Si un deuxième argument est spécifié, alors rechercher les anagrammes de ce mot.
 	else
 		#Compter le nombre de caractère
